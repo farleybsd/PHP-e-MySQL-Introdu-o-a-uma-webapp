@@ -1,0 +1,8 @@
+Erro Ao Acessar PhpMyAdmin
+
+1- abra o arquivo config.inc.php dentro da pasta: C:\xampp\phpmyadmin\config.inc.php
+2- Procure pela linha "$cfg['Servers'][$i]['auth_type']" em seguida mude o tipo de conexão de "config" para "cookie"
+3- Salve o arquivo.
+3- Finalize o XAMPP e execute novamente.
+Por fim abra novamente o painel PhpMyAdmin.
+Se por acaso não funcionar sugiro que tente reinstalar o XAMPP ou instalar o WAMP server (prefiro este). Mas antes lembre de fazer backup dos arquivos da pasta www.
