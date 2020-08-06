@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <?php
+require 'Config.php';
 include 'Artigo.php';
-$artigo = new Artigo();
+$artigo = new Artigo($mysql);
 $artigos = $artigo->exibirTodos();
 ?>
 
@@ -16,15 +17,15 @@ $artigos = $artigo->exibirTodos();
 <body>
     <div id="container">
         <h1>Meu Blog</h1>
-        <?php foreach($artigos as $artigo) :?>
-        <h2>
-            <a href="<?php echo $artigo['Link']; ?>">
-                <?php echo $artigo['titulo'] ;?>
-            </a>
-        </h2>
-        <p>
-            <?php echo $artigo['Conteudo'];?>
-        </p>
+        <?php foreach ($artigos as $artigo) : ?>
+            <h2>
+                <a href="<?php echo $artigo['Link']; ?>">
+                    <?php echo $artigo['titulo']; ?>
+                </a>
+            </h2>
+            <p>
+                <?php echo $artigo['conteudo']; ?>
+            </p>
         <?php endforeach; ?>
     </div>
 </body>
