@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <?php
 require 'Config.php';
-include 'Artigo.php';
+include 'src/Artigo.php';
 $artigo = new Artigo($mysql);
 $artigos = $artigo->exibirTodos();
 ?>
@@ -19,7 +19,7 @@ $artigos = $artigo->exibirTodos();
         <h1>Meu Blog</h1>
         <?php foreach ($artigos as $artigo) : ?>
             <h2>
-                <a href="<?php echo $artigo['Link']; ?>">
+                <a href="artigo.php?id=<?php echo $artigo['id']; ?>">
                     <?php echo $artigo['titulo']; ?>
                 </a>
             </h2>
