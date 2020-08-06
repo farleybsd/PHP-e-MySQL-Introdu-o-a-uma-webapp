@@ -6,3 +6,49 @@ Erro Ao Acessar PhpMyAdmin
 3- Finalize o XAMPP e execute novamente.
 Por fim abra novamente o painel PhpMyAdmin.
 Se por acaso não funcionar sugiro que tente reinstalar o XAMPP ou instalar o WAMP server (prefiro este). Mas antes lembre de fazer backup dos arquivos da pasta www.
+
+ALETERAR PORTA DO Apache 80
+Apache -> config 
+Apache config http.confg
+Listen 8080
+ServerName localhost:8080
+http-ssl.conf default 443
+Listen 4433 
+<VirtualHost _default_:4433>
+
+
+mysql nao sobe na PORTA  3306
+
+XAMP CONFIG -> sERVICE AND PORT SETTINGS -> MYSQL -> MAIN PORT 3307
+
+MYSQL -> CONFIG -> MY.INI
+[client]
+# password       = your_password 
+port=3307
+socket="C:/xampp/mysql/mysql.sock"
+
+# Here follows entries for some specific programs 
+
+# The MySQL server
+default-character-set=utf8mb4
+[mysqld]
+port=3307
+socket="C:/xampp/mysql/mysql.sock"
+basedir="C:/xampp/mysql"
+tmpdir="C:/xampp/tmp"
+datadir="C:/xampp/mysql/data"
+pid_file="mysql.pid"
+# enable-named-pipe
+key_buffer=16M
+max_allowed_packet=1M
+sort_buffer_size=512K
+net_buffer_length=8K
+read_buffer_size=256K
+read_rnd_buffer_size=512K
+myisam_sort_buffer_size=8M
+log_error="mysql_error.log"
+
+C:\xampp\phpMyAdmin
+CONFIG.INI.PHP
+/* Bind to the localhost ipv4 address and tcp */
+$cfg['Servers'][$i]['host'] = '127.0.0.1:3307';
