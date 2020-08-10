@@ -5,7 +5,10 @@ if ($_SERVER['REQUEST_METHOD'] ==='POST') {
     
     $artigo = new Artigo($mysql);
     $artigo->adicionar( $_POST['titulo'],$_POST['conteudo']);
-   
+    //redirecionar
+    header('Location:adicionar-artigo.php');
+    // interropendo a execucao
+    die();
 }
 //var_dump($_POST['conteudo'],$_POST['titulo']);
 // echo "<pre>";
