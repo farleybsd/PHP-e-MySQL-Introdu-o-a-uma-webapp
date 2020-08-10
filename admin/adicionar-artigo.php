@@ -1,14 +1,14 @@
 <?php
 require '../Config.php';
 require '../src/Artigo.php';
+require '../src/Redireciona.php';
 if ($_SERVER['REQUEST_METHOD'] ==='POST') {
     
     $artigo = new Artigo($mysql);
     $artigo->adicionar( $_POST['titulo'],$_POST['conteudo']);
-    //redirecionar
-    header('Location: /blog/admin/index.php');
-    // interropendo a execucao
-    die();
+    redireciona('/blog/admin/index.php');
+
+
 }
 //var_dump($_POST['conteudo'],$_POST['titulo']);
 // echo "<pre>";
